@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>BloomCast ZA - Live MVP</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -19,13 +19,13 @@
         }
     </script>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans antialiased overflow-hidden flex flex-col h-screen">
+<body class="bg-gray-50 text-gray-900 font-sans antialiased overflow-hidden flex flex-col h-[100dvh] w-full">
 
     <header class="bg-white z-20 shadow-sm border-b border-gray-200 w-full flex-shrink-0">
-        <div class="flex items-center justify-between px-4 py-3">
-            <div class="flex items-center space-x-2 w-64 flex-shrink-0">
-                <span class="text-2xl">🌱</span>
-                <h1 class="text-xl font-extrabold tracking-tight text-gray-900">BloomCast <span class="text-bloom-600">ZA</span></h1>
+        <div class="flex items-center justify-between px-3 md:px-4 py-3">
+            <div class="flex items-center space-x-1.5 md:space-x-2 flex-shrink-0">
+                <span class="text-xl md:text-2xl">🌱</span>
+                <h1 class="text-lg md:text-xl font-extrabold tracking-tight text-gray-900">Bloom<span class="hidden sm:inline">Cast</span> <span class="text-bloom-600">ZA</span></h1>
             </div>
 
             <div class="hidden md:flex flex-1 max-w-2xl mx-4">
@@ -37,18 +37,18 @@
                 </div>
             </div>
 
-            <div class="flex items-center space-x-4 flex-shrink-0 ml-auto">
+            <div class="flex items-center space-x-2 md:space-x-4 flex-shrink-0 ml-auto">
                 <button class="hidden md:block text-gray-500 hover:text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                 </button>
-                <button id="login-btn" onclick="loginUser()" class="bg-bloom-600 text-white px-5 py-1.5 rounded-full text-sm font-bold hover:bg-bloom-900 transition-all shadow-md hover:shadow-lg">
+                <button id="login-btn" onclick="loginUser()" class="bg-bloom-600 text-white px-3 md:px-5 py-1.5 rounded-full text-xs md:text-sm font-bold hover:bg-bloom-900 transition-all shadow-md hover:shadow-lg whitespace-nowrap">
                     Login / Sign Up
                 </button>
             </div>
         </div>
 
         <div class="bg-bloom-900 text-bloom-50 overflow-hidden py-1.5 flex items-center shadow-inner relative z-0 border-t border-bloom-800">
-            <div class="whitespace-nowrap animate-marquee flex space-x-12 text-sm font-medium w-full">
+            <div class="whitespace-nowrap animate-marquee flex space-x-12 text-xs md:text-sm font-medium w-full">
                 <span>🔥 EsportsArenaZA just went live!</span>
                 <span>|</span>
                 <span>🌱 SarahBakes started streaming to the Discovery Zone</span>
@@ -60,7 +60,7 @@
         </div>
     </header>
 
-    <div class="flex-1 flex overflow-hidden">
+    <div class="flex-1 flex overflow-hidden w-full">
         
         <aside class="w-64 bg-gray-50 border-r border-gray-200 hidden lg:flex flex-col flex-shrink-0 overflow-y-auto">
             <div class="p-4">
@@ -81,24 +81,24 @@
             </div>
         </aside>
 
-        <main class="flex-1 overflow-y-auto bg-gray-100">
-            <div class="flex overflow-x-auto px-6 py-4 space-x-3 bg-white border-b border-gray-200 scrollbar-hide sticky top-0 z-10">
-                <button class="whitespace-nowrap px-5 py-1.5 rounded-full bg-gray-900 text-white text-sm font-medium hover:bg-gray-800 transition">All</button>
-                <button class="whitespace-nowrap px-5 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm font-medium transition">Gaming</button>
-                <button class="whitespace-nowrap px-5 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm font-medium transition">Tech Startups</button>
-                <button class="whitespace-nowrap px-5 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm font-medium transition">Music</button>
-                <button class="whitespace-nowrap px-5 py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-sm font-medium transition">Food & Drink</button>
+        <main class="flex-1 overflow-y-auto bg-gray-100 w-full overflow-x-hidden">
+            <div class="flex overflow-x-auto px-4 md:px-6 py-3 md:py-4 space-x-2 md:space-x-3 bg-white border-b border-gray-200 scrollbar-hide sticky top-0 z-10 w-full">
+                <button class="whitespace-nowrap px-4 md:px-5 py-1 md:py-1.5 rounded-full bg-gray-900 text-white text-xs md:text-sm font-medium hover:bg-gray-800 transition">All</button>
+                <button class="whitespace-nowrap px-4 md:px-5 py-1 md:py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs md:text-sm font-medium transition">Gaming</button>
+                <button class="whitespace-nowrap px-4 md:px-5 py-1 md:py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs md:text-sm font-medium transition">Tech Startups</button>
+                <button class="whitespace-nowrap px-4 md:px-5 py-1 md:py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs md:text-sm font-medium transition">Music</button>
+                <button class="whitespace-nowrap px-4 md:px-5 py-1 md:py-1.5 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xs md:text-sm font-medium transition">Food & Drink</button>
             </div>
 
-            <div class="w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-8 space-y-10 pb-24">
+            <div class="w-full max-w-7xl mx-auto p-3 md:p-6 lg:p-8 space-y-6 md:space-y-10 pb-24">
                 
                 <section>
-                    <h2 class="text-xl md:text-2xl font-bold mb-5 flex items-center text-gray-800">
-                        <span class="text-3xl mr-2">🌳</span> Featured Giants
+                    <h2 class="text-lg md:text-2xl font-bold mb-3 md:mb-5 flex items-center text-gray-800">
+                        <span class="text-2xl md:text-3xl mr-2">🌳</span> Featured Giants
                     </h2>
                     
-                    <div id="giants-feed" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-                        <p class="text-gray-500 animate-pulse">Connecting to database...</p>
+                    <div id="giants-feed" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-5">
+                        <p class="text-gray-500 animate-pulse text-sm md:text-base">Connecting to database...</p>
                     </div>
                 </section>
             </div>
@@ -115,13 +115,12 @@
                 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNnd3d4anVhcGV5cXd6cHdneGp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUxMzE4MDcsImV4cCI6MjA5MDcwNzgwN30.3a01n_rx0sssT3KOg5bMshoDZlHR9yUbUjYY6q2Hs8Q'; 
 
                 if (!SUPABASE_ANON_KEY.startsWith('eyJ')) {
-                    feedContainer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 font-bold rounded-lg border border-red-200">⚠️ Invalid API Key. Fix the sb_publishable key.</div>`;
+                    feedContainer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-sm md:text-base font-bold rounded-lg border border-red-200">⚠️ Invalid API Key. Fix the sb_publishable key.</div>`;
                     return;
                 }
 
                 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-                // Fetch live streams
                 const { data: streams, error } = await supabase
                     .from('live_streams')
                     .select('*, profiles(username)')
@@ -130,59 +129,59 @@
                 if (error) throw error;
 
                 if (!streams || streams.length === 0) {
-                    feedContainer.innerHTML = `<div class="p-6 bg-white rounded-xl border border-dashed border-gray-300 text-center col-span-3 text-gray-500 font-medium">Database connected! But nobody is streaming right now.</div>`;
+                    feedContainer.innerHTML = `<div class="p-6 bg-white rounded-xl border border-dashed border-gray-300 text-center col-span-1 sm:col-span-2 xl:col-span-3 text-gray-500 font-medium text-sm md:text-base">Database connected! But nobody is streaming right now.</div>`;
                     return;
                 }
 
                 // 1. POPULATE MAIN FEED
                 feedContainer.innerHTML = streams.map(stream => `
                     <div class="rounded-xl overflow-hidden bg-white shadow-sm border border-gray-200 group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div class="w-full h-56 relative bg-gray-900 overflow-hidden">
+                        <div class="w-full h-48 md:h-56 relative bg-gray-900 overflow-hidden">
                             <img src="https://picsum.photos/seed/${stream.id}/800/450" alt="Thumbnail" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                            <span class="absolute top-3 left-3 bg-red-600 text-white text-[11px] font-bold px-2 py-1 rounded uppercase tracking-wider shadow-sm">LIVE</span>
-                            <span class="absolute bottom-3 right-3 bg-black bg-opacity-80 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm shadow-sm">${stream.current_viewers.toLocaleString()} viewers</span>
+                            <span class="absolute top-2 left-2 md:top-3 md:left-3 bg-red-600 text-white text-[10px] md:text-[11px] font-bold px-2 py-0.5 md:py-1 rounded uppercase tracking-wider shadow-sm">LIVE</span>
+                            <span class="absolute bottom-2 right-2 md:bottom-3 md:right-3 bg-black bg-opacity-80 text-white text-[10px] md:text-xs font-bold px-2 py-0.5 md:py-1 rounded backdrop-blur-sm shadow-sm">${stream.current_viewers.toLocaleString()} viewers</span>
                         </div>
-                        <div class="p-4 flex space-x-3">
-                            <div class="w-10 h-10 rounded-full bg-bloom-100 text-bloom-800 font-bold flex items-center justify-center flex-shrink-0 border-2 border-bloom-400">
+                        <div class="p-3 md:p-4 flex space-x-3">
+                            <div class="w-8 h-8 md:w-10 md:h-10 rounded-full bg-bloom-100 text-bloom-800 font-bold flex items-center justify-center flex-shrink-0 border-2 border-bloom-400 text-xs md:text-base">
                                 ${stream.profiles.username.charAt(0)}
                             </div>
                             <div class="overflow-hidden">
-                                <h3 class="font-bold text-gray-900 truncate leading-tight group-hover:text-bloom-600 transition-colors">${stream.title}</h3>
-                                <p class="text-sm text-gray-500 mt-1 truncate">${stream.profiles.username}</p>
-                                <p class="text-xs text-gray-400 mt-0.5">${stream.category}</p>
+                                <h3 class="font-bold text-sm md:text-base text-gray-900 truncate leading-tight group-hover:text-bloom-600 transition-colors">${stream.title}</h3>
+                                <p class="text-[11px] md:text-sm text-gray-500 mt-0.5 md:mt-1 truncate">${stream.profiles.username}</p>
+                                <p class="text-[10px] md:text-xs text-gray-400 mt-0.5">${stream.category}</p>
                             </div>
                         </div>
                     </div>
                 `).join('');
 
-                // 2. POPULATE THE SIDEBAR (Top 5 Streams by Viewers)
-                const topStreams = [...streams].sort((a, b) => b.current_viewers - a.current_viewers).slice(0, 5);
-                
-                sidebarContainer.innerHTML = topStreams.map(stream => `
-                    <div class="flex items-center justify-between cursor-pointer group">
-                        <div class="flex items-center space-x-3 overflow-hidden">
-                            <div class="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 flex-shrink-0 flex items-center justify-center text-xs font-bold text-gray-600 group-hover:border-bloom-400 group-hover:bg-bloom-50 transition-colors">
-                                ${stream.profiles.username.charAt(0)}
+                // 2. POPULATE THE SIDEBAR (Desktop Only)
+                if(sidebarContainer) {
+                    const topStreams = [...streams].sort((a, b) => b.current_viewers - a.current_viewers).slice(0, 5);
+                    sidebarContainer.innerHTML = topStreams.map(stream => `
+                        <div class="flex items-center justify-between cursor-pointer group">
+                            <div class="flex items-center space-x-3 overflow-hidden">
+                                <div class="w-8 h-8 rounded-full bg-gray-200 border border-gray-300 flex-shrink-0 flex items-center justify-center text-xs font-bold text-gray-600 group-hover:border-bloom-400 group-hover:bg-bloom-50 transition-colors">
+                                    ${stream.profiles.username.charAt(0)}
+                                </div>
+                                <div class="truncate">
+                                    <p class="text-sm font-bold text-gray-800 group-hover:text-bloom-600 truncate">${stream.profiles.username}</p>
+                                    <p class="text-[11px] text-gray-500 truncate">${stream.category}</p>
+                                </div>
                             </div>
-                            <div class="truncate">
-                                <p class="text-sm font-bold text-gray-800 group-hover:text-bloom-600 truncate">${stream.profiles.username}</p>
-                                <p class="text-[11px] text-gray-500 truncate">${stream.category}</p>
+                            <div class="flex items-center space-x-1 pl-2">
+                                <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
+                                <span class="text-xs font-bold text-gray-600">${(stream.current_viewers / 1000).toFixed(1)}k</span>
                             </div>
                         </div>
-                        <div class="flex items-center space-x-1 pl-2">
-                            <div class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></div>
-                            <span class="text-xs font-bold text-gray-600">${(stream.current_viewers / 1000).toFixed(1)}k</span>
-                        </div>
-                    </div>
-                `).join('');
+                    `).join('');
+                }
 
             } catch (err) {
                 console.error("Database Error:", err);
-                feedContainer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 font-bold rounded-lg border border-red-200">Database Connection Failed: ${err.message}</div>`;
+                feedContainer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 text-sm md:text-base font-bold rounded-lg border border-red-200">Database Connection Failed: ${err.message}</div>`;
             }
         };
 
-        // Dummy Login Function
         async function loginUser() {
             alert("Ready to build the actual Login screen when you are!");
         }
